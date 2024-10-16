@@ -1,0 +1,3 @@
+/Users/egorbutyrin/study/cplusplus/1-console-app/CMakeFiles/OOPcourse.dir
+/Users/egorbutyrin/study/cplusplus/1-console-app/CMakeFiles/edit_cache.dir
+/Users/egorbutyrin/study/cplusplus/1-console-app/CMakeFiles/rebuild_cache.dir

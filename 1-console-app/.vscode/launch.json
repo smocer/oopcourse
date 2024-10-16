@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(lldb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/OOPCourse",   // Path to your executable
+      "args": [],                                      // Arguments to pass to the program
+      "stopAtEntry": false,                            // Whether to stop at the entry point
+      "cwd": "${workspaceFolder}",                     // Working directory
+      "environment": [],                               // Environment variables
+      "externalConsole": false,                         // Use an external terminal for input/output
+      "MIMode": "lldb",                                // Use LLDB for debugging
+      "preLaunchTask": "build_all",                    // Task to build your program
+      "logging": { "engineLogging": true },            // Enable logging for debugging issues
+      "targetArchitecture": "x64",                     // Target architecture
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for lldb",
+          "text": "settings set target.prefer-dynamic-value run-target",
+          "ignoreFailures": false
+        }
+      ]
+    }
+  ]
+}
