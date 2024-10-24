@@ -50,7 +50,7 @@ std::ostream &operator<<(std::ostream &out, const Matrix &mat)
             out << "(";
             for (size_t channel = 0; channel < mat.getChannels(); ++channel)
             {
-                out << (channel > 0 ? ", " : "") << std::setw(3);
+                out << (channel > 0 ? ", " : "") << std::setw(4);
                 out << names[channel] << ": " << mat.at(row, col, channel);
             }
             out << ")";
@@ -58,4 +58,40 @@ std::ostream &operator<<(std::ostream &out, const Matrix &mat)
         out << std::endl;
     }
     return out;
+}
+
+RGBMatrix RGBMatrix::add(int val) const
+{
+    RGBMatrix res(rows_count_, columns_count_, channels_count_);
+    Matrix::add(res, val);
+    return res;
+}
+
+RGBMatrix RGBMatrix::subtract(int val) const
+{
+    RGBMatrix res(rows_count_, columns_count_, channels_count_);
+    Matrix::subtract(res, val);
+    return res;
+}
+
+RGBMatrix RGBMatrix::multiply(int val) const
+{
+    RGBMatrix res(rows_count_, columns_count_, channels_count_);
+    Matrix::multiply(res, val);
+    return res;
+}
+
+RGBMatrix RGBMatrix::operator+(int val) const
+{
+    return add(val);
+}
+
+RGBMatrix RGBMatrix::operator-(int val) const
+{
+    return subtract(val);
+}
+
+RGBMatrix RGBMatrix::operator*(int val) const
+{
+    return multiply(val);
 }

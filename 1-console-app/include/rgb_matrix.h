@@ -13,6 +13,14 @@ public:
 
     void print() const override;
 
+    RGBMatrix add(int val) const;
+    RGBMatrix subtract(int val) const;
+    RGBMatrix multiply(int val) const;
+    
+    RGBMatrix operator+(int val) const;
+    RGBMatrix operator-(int val) const;
+    RGBMatrix operator*(int val) const;
+    
     RGBMatrix &operator=(const RGBMatrix &mat);
     friend std::ostream &operator<<(std::ostream &out, const Matrix &mat);
 };

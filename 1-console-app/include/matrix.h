@@ -35,7 +35,6 @@ public:
     Matrix add(int val) const;
     Matrix subtract(int val) const;
     Matrix multiply(int val) const;
-    Matrix performOperation(std::function<int(int)> operation) const;
 
     Matrix add(Matrix val) const;
     Matrix subtract(Matrix val) const;
@@ -49,6 +48,11 @@ public:
     Matrix operator*(Matrix val) const;
     Matrix &operator=(const Matrix &mat);
     friend std::ostream &operator<<(std::ostream &out, const Matrix &mat);
+
+protected:
+    void add(Matrix &res, int val) const;
+    void subtract(Matrix &res, int val) const;
+    void multiply(Matrix &res, int val) const;
 
 protected:
     size_t rows_count_;

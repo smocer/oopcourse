@@ -47,28 +47,23 @@ void Matrix::print() const
 
 Matrix Matrix::add(int val) const
 {
-    return performOperation([val](int e)
-                            { return e + val; });
+    Matrix res(rows_count_, columns_count_, channels_count_);
+    add(res, val);
+    return res;
 }
 
 Matrix Matrix::subtract(int val) const
 {
-    return performOperation([val](int e)
-                            { return e - val; });
+    Matrix res(rows_count_, columns_count_, channels_count_);
+    subtract(res, val);
+    return res;
 }
 
 Matrix Matrix::multiply(int val) const
 {
-    return performOperation([val](int e)
-                            { return e * val; });
-}
-
-Matrix Matrix::performOperation(std::function<int(int)> operation) const
-{
-    auto result = Matrix(rows_count_, columns_count_, channels_count_);
-    // result.data.resize(data.size());
-    std::transform(data_.begin(), data_.end(), result.data_.begin(), operation);
-    return result;
+    Matrix res(rows_count_, columns_count_, channels_count_);
+    multiply(res, val);
+    return res;
 }
 
 Matrix Matrix::add(Matrix val) const
@@ -199,3 +194,27 @@ Matrix &Matrix::operator=(const Matrix &mat)
 //     }
 //     return out;
 // }
+
+void Matrix::add(Matrix &res, int val) const
+{
+    for (size_t i = 0; i < data_.size(); ++i)
+    {
+        res.data_[i] = data_[i] + val;
+    }
+}
+
+void Matrix::subtract(Matrix &res, int val) const
+{
+    for (size_t i = 0; i < data_.size(); ++i)
+    {
+        res.data_[i] = data_[i] - val;
+    }
+}
+
+void Matrix::multiply(Matrix &res, int val) const
+{
+    for (size_t i = 0; i < data_.size(); ++i)
+    {
+        res.data_[i] = data_[i] * val;
+    }
+}

@@ -23,9 +23,29 @@ int main()
 {
     std::srand(std::time(nullptr));
     RGBMatrix a(2, 3);
+    BWMatrix b(4, 1);
     GenMatrix(a);
+    GenMatrix(b);
 
     std::cout << a;
+
+    std::cout << "======================" << std::endl;
+
+    std::cout << a + 11;
+    std::cout << "======================" << std::endl;
+    std::cout << a - 11;
+    std::cout << "======================" << std::endl;
+    std::cout << a * 10;
+    std::cout << "======================" << std::endl;
+
+    std::cout << b;
+    std::cout << "======================" << std::endl;
+
+    std::cout << b + 11;
+    std::cout << "======================" << std::endl;
+    std::cout << b - 11;
+    std::cout << "======================" << std::endl;
+    std::cout << b * 10;
 
     return 0;
 }

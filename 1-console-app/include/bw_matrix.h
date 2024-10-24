@@ -13,6 +13,14 @@ public:
 
     void print() const override;
 
+    BWMatrix add(int val) const;
+    BWMatrix subtract(int val) const;
+    BWMatrix multiply(int val) const;
+    
+    BWMatrix operator+(int val) const;
+    BWMatrix operator-(int val) const;
+    BWMatrix operator*(int val) const;
+
     BWMatrix &operator=(const BWMatrix &mat);
     friend std::ostream &operator<<(std::ostream &out, const Matrix &mat);
 };

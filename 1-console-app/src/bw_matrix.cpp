@@ -52,3 +52,39 @@ BWMatrix &BWMatrix::operator=(const BWMatrix &mat)
 //     }
 //     return out;
 // }
+
+BWMatrix BWMatrix::add(int val) const
+{
+    BWMatrix res(rows_count_, columns_count_, channels_count_);
+    Matrix::add(res, val);
+    return res;
+}
+
+BWMatrix BWMatrix::subtract(int val) const
+{
+    BWMatrix res(rows_count_, columns_count_, channels_count_);
+    Matrix::subtract(res, val);
+    return res;
+}
+
+BWMatrix BWMatrix::multiply(int val) const
+{
+    BWMatrix res(rows_count_, columns_count_, channels_count_);
+    Matrix::multiply(res, val);
+    return res;
+}
+
+BWMatrix BWMatrix::operator+(int val) const
+{
+    return add(val);
+}
+
+BWMatrix BWMatrix::operator-(int val) const
+{
+    return subtract(val);
+}
+
+BWMatrix BWMatrix::operator*(int val) const
+{
+    return multiply(val);
+}
