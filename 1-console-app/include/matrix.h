@@ -21,13 +21,13 @@ public:
     // why `int &` instead of int
     inline const int &at(size_t row, size_t col, size_t channel = 0) const
     {
-        return data_[row * rows_count_ * channels_count_ + col * channels_count_ + channel];
+        return data_[row * columns_count_ * channels_count_ + col * channels_count_ + channel];
     }
 
     // what's the difference with the previous one
     inline int &at(size_t row, size_t col, size_t channel = 0)
     {
-        return data_[row * rows_count_ * channels_count_ + col * channels_count_ + channel];
+        return data_[row * columns_count_ * channels_count_ + col * channels_count_ + channel];
     }
 
     virtual void print() const;
