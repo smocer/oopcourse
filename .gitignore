@@ -35,5 +35,5 @@
 *.DS_Store
 
 # build / cmake artifacts
-*/bin/*
-*/build/*
+**/build/
+**/bin/

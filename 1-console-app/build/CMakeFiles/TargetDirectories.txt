@@ -1,3 +1,0 @@
-/Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles/OOPcourse.dir
-/Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles/edit_cache.dir
-/Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles/rebuild_cache.dir
