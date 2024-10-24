@@ -16,13 +16,7 @@
             "compilerArgs": [
                 "-Wuninitialized",          // Enable uninitialized warnings
                 "-Werror=uninitialized"     // Treat uninitialized as errors
-            ],
-            "clangTidyEnabled": true,               // Enable clang-tidy
-            "clangTidyArgs": [
-                "--checks=-*,clang-analyzer-*",      // Example: Enable clang-analyzer checks
-                "--warnings-as-errors=*"
-            ],
-            "clangTidyPath": "/usr/local/opt/llvm/bin/clang-tidy"
+            ]
         }
     ],
     "version": 4
