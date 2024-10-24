@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.30.5/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/egorbutyrin/study/cplusplus/1-console-app
+CMAKE_SOURCE_DIR = /Users/egorbutyrin/study/oopcourse/1-console-app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/egorbutyrin/study/cplusplus/1-console-app/build
+CMAKE_BINARY_DIR = /Users/egorbutyrin/study/oopcourse/1-console-app/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OOPcourse.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/OOPcourse.dir/progress.make
 include CMakeFiles/OOPcourse.dir/flags.make
 
 CMakeFiles/OOPcourse.dir/main.cpp.o: CMakeFiles/OOPcourse.dir/flags.make
-CMakeFiles/OOPcourse.dir/main.cpp.o: /Users/egorbutyrin/study/cplusplus/1-console-app/main.cpp
+CMakeFiles/OOPcourse.dir/main.cpp.o: /Users/egorbutyrin/study/oopcourse/1-console-app/main.cpp
 CMakeFiles/OOPcourse.dir/main.cpp.o: CMakeFiles/OOPcourse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/egorbutyrin/study/cplusplus/1-console-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OOPcourse.dir/main.cpp.o"
-	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OOPcourse.dir/main.cpp.o -MF CMakeFiles/OOPcourse.dir/main.cpp.o.d -o CMakeFiles/OOPcourse.dir/main.cpp.o -c /Users/egorbutyrin/study/cplusplus/1-console-app/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OOPcourse.dir/main.cpp.o"
+	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OOPcourse.dir/main.cpp.o -MF CMakeFiles/OOPcourse.dir/main.cpp.o.d -o CMakeFiles/OOPcourse.dir/main.cpp.o -c /Users/egorbutyrin/study/oopcourse/1-console-app/main.cpp
 
 CMakeFiles/OOPcourse.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OOPcourse.dir/main.cpp.i"
-	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/egorbutyrin/study/cplusplus/1-console-app/main.cpp > CMakeFiles/OOPcourse.dir/main.cpp.i
+	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/egorbutyrin/study/oopcourse/1-console-app/main.cpp > CMakeFiles/OOPcourse.dir/main.cpp.i
 
 CMakeFiles/OOPcourse.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OOPcourse.dir/main.cpp.s"
-	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/egorbutyrin/study/cplusplus/1-console-app/main.cpp -o CMakeFiles/OOPcourse.dir/main.cpp.s
+	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/egorbutyrin/study/oopcourse/1-console-app/main.cpp -o CMakeFiles/OOPcourse.dir/main.cpp.s
 
 CMakeFiles/OOPcourse.dir/src/matrix.cpp.o: CMakeFiles/OOPcourse.dir/flags.make
-CMakeFiles/OOPcourse.dir/src/matrix.cpp.o: /Users/egorbutyrin/study/cplusplus/1-console-app/src/matrix.cpp
+CMakeFiles/OOPcourse.dir/src/matrix.cpp.o: /Users/egorbutyrin/study/oopcourse/1-console-app/src/matrix.cpp
 CMakeFiles/OOPcourse.dir/src/matrix.cpp.o: CMakeFiles/OOPcourse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/egorbutyrin/study/cplusplus/1-console-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OOPcourse.dir/src/matrix.cpp.o"
-	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OOPcourse.dir/src/matrix.cpp.o -MF CMakeFiles/OOPcourse.dir/src/matrix.cpp.o.d -o CMakeFiles/OOPcourse.dir/src/matrix.cpp.o -c /Users/egorbutyrin/study/cplusplus/1-console-app/src/matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OOPcourse.dir/src/matrix.cpp.o"
+	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OOPcourse.dir/src/matrix.cpp.o -MF CMakeFiles/OOPcourse.dir/src/matrix.cpp.o.d -o CMakeFiles/OOPcourse.dir/src/matrix.cpp.o -c /Users/egorbutyrin/study/oopcourse/1-console-app/src/matrix.cpp
 
 CMakeFiles/OOPcourse.dir/src/matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OOPcourse.dir/src/matrix.cpp.i"
-	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/egorbutyrin/study/cplusplus/1-console-app/src/matrix.cpp > CMakeFiles/OOPcourse.dir/src/matrix.cpp.i
+	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/egorbutyrin/study/oopcourse/1-console-app/src/matrix.cpp > CMakeFiles/OOPcourse.dir/src/matrix.cpp.i
 
 CMakeFiles/OOPcourse.dir/src/matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OOPcourse.dir/src/matrix.cpp.s"
-	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/egorbutyrin/study/cplusplus/1-console-app/src/matrix.cpp -o CMakeFiles/OOPcourse.dir/src/matrix.cpp.s
+	/Applications/Xcode-15.1.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/egorbutyrin/study/oopcourse/1-console-app/src/matrix.cpp -o CMakeFiles/OOPcourse.dir/src/matrix.cpp.s
 
 # Object files for target OOPcourse
 OOPcourse_OBJECTS = \
@@ -109,7 +109,7 @@ bin/OOPcourse: CMakeFiles/OOPcourse.dir/main.cpp.o
 bin/OOPcourse: CMakeFiles/OOPcourse.dir/src/matrix.cpp.o
 bin/OOPcourse: CMakeFiles/OOPcourse.dir/build.make
 bin/OOPcourse: CMakeFiles/OOPcourse.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/egorbutyrin/study/cplusplus/1-console-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/OOPcourse"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/OOPcourse"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OOPcourse.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +121,6 @@ CMakeFiles/OOPcourse.dir/clean:
 .PHONY : CMakeFiles/OOPcourse.dir/clean
 
 CMakeFiles/OOPcourse.dir/depend:
-	cd /Users/egorbutyrin/study/cplusplus/1-console-app/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/egorbutyrin/study/cplusplus/1-console-app /Users/egorbutyrin/study/cplusplus/1-console-app /Users/egorbutyrin/study/cplusplus/1-console-app/build /Users/egorbutyrin/study/cplusplus/1-console-app/build /Users/egorbutyrin/study/cplusplus/1-console-app/build/CMakeFiles/OOPcourse.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/egorbutyrin/study/oopcourse/1-console-app/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/egorbutyrin/study/oopcourse/1-console-app /Users/egorbutyrin/study/oopcourse/1-console-app /Users/egorbutyrin/study/oopcourse/1-console-app/build /Users/egorbutyrin/study/oopcourse/1-console-app/build /Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles/OOPcourse.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/OOPcourse.dir/depend
 

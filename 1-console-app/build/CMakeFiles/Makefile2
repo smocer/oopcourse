@@ -54,10 +54,10 @@ RM = /opt/homebrew/Cellar/cmake/3.30.5/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/egorbutyrin/study/cplusplus/1-console-app
+CMAKE_SOURCE_DIR = /Users/egorbutyrin/study/oopcourse/1-console-app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/egorbutyrin/study/cplusplus/1-console-app/build
+CMAKE_BINARY_DIR = /Users/egorbutyrin/study/oopcourse/1-console-app/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/OOPcourse.dir/clean
 CMakeFiles/OOPcourse.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OOPcourse.dir/build.make CMakeFiles/OOPcourse.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OOPcourse.dir/build.make CMakeFiles/OOPcourse.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/egorbutyrin/study/cplusplus/1-console-app/build/CMakeFiles --progress-num=1,2,3 "Built target OOPcourse"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles --progress-num=1,2,3 "Built target OOPcourse"
 .PHONY : CMakeFiles/OOPcourse.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/OOPcourse.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egorbutyrin/study/cplusplus/1-console-app/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/OOPcourse.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egorbutyrin/study/cplusplus/1-console-app/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egorbutyrin/study/oopcourse/1-console-app/build/CMakeFiles 0
 .PHONY : CMakeFiles/OOPcourse.dir/rule
 
 # Convenience name for target.

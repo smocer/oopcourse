@@ -13,7 +13,7 @@
       "externalConsole": false,                         // Use an external terminal for input/output
       "MIMode": "lldb",                                // Use LLDB for debugging
       "preLaunchTask": "build_all",                    // Task to build your program
-      "logging": { "engineLogging": true },            // Enable logging for debugging issues
+      "logging": { "engineLogging": false },            // Enable logging for debugging issues
       "targetArchitecture": "x64",                     // Target architecture
       "setupCommands": [
         {

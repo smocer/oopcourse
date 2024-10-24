@@ -15,10 +15,14 @@
                 "${workspaceFolder}/bin/OOPCourse",
                 "-I",
                 "${workspaceFolder}/include",
-                "-std=c++14"
+                "-std=c++14",
+                "-Wuninitialized",
+                "-Werror=uninitialized",
+                "-Wall",
+                "-Wextra"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"

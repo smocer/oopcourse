@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/egorbutyrin/study/cplusplus/1-console-app/main.cpp" "CMakeFiles/OOPcourse.dir/main.cpp.o" "gcc" "CMakeFiles/OOPcourse.dir/main.cpp.o.d"
-  "/Users/egorbutyrin/study/cplusplus/1-console-app/src/matrix.cpp" "CMakeFiles/OOPcourse.dir/src/matrix.cpp.o" "gcc" "CMakeFiles/OOPcourse.dir/src/matrix.cpp.o.d"
+  "/Users/egorbutyrin/study/oopcourse/1-console-app/main.cpp" "CMakeFiles/OOPcourse.dir/main.cpp.o" "gcc" "CMakeFiles/OOPcourse.dir/main.cpp.o.d"
+  "/Users/egorbutyrin/study/oopcourse/1-console-app/src/matrix.cpp" "CMakeFiles/OOPcourse.dir/src/matrix.cpp.o" "gcc" "CMakeFiles/OOPcourse.dir/src/matrix.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

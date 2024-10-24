@@ -3,22 +3,35 @@
 
 #include <vector>
 #include <functional>
+#include <iostream>
 
 class Matrix
 {
 public:
     Matrix();
     Matrix(const Matrix &mat);
-    Matrix(int num_rows, int num_cols);
-    Matrix(size_t rowSize, size_t colSize);
-    Matrix(size_t rowSize, size_t colSize, int initValue);
+    Matrix(int num_rows, int num_cols, int channels);
+    Matrix(size_t rows_count, size_t columns_count, size_t channels);
+    Matrix(size_t rows_count, size_t columns_count, size_t channels, int init_value);
 
-    inline size_t getRows() const { return rowSize; } // why inline
-    inline size_t getCols() const { return colSize; }
-    inline const int &at(size_t row, size_t col) const { return data[row * rowSize + col]; } // why `int &` instead of int
-    inline int &at(size_t row, size_t col) { return data[row * rowSize + col]; } // what's the difference with the previous one
+    // why inline
+    inline size_t getRows() const { return rows_count_; }
+    inline size_t getCols() const { return columns_count_; }
+    inline size_t getChannels() const { return channels_count_; }
 
-    void print();
+    // why `int &` instead of int
+    inline const int &at(size_t row, size_t col, size_t channel = 0) const
+    {
+        return data_[row * rows_count_ * channels_count_ + col * channels_count_ + channel];
+    }
+
+    // what's the difference with the previous one
+    inline int &at(size_t row, size_t col, size_t channel = 0)
+    {
+        return data_[row * rows_count_ * channels_count_ + col * channels_count_ + channel];
+    }
+
+    void print() const;
 
     Matrix add(int val) const;
     Matrix subtract(int val) const;
@@ -29,12 +42,20 @@ public:
     Matrix subtract(Matrix val) const;
     Matrix multiply(Matrix val) const;
 
-    Matrix& operator=(const Matrix& mat);
+    Matrix operator+(int val) const;
+    Matrix operator+(Matrix val) const;
+    Matrix operator-(int val) const;
+    Matrix operator-(Matrix val) const;
+    Matrix operator*(int val) const;
+    Matrix operator*(Matrix val) const;
+    Matrix &operator=(const Matrix &mat);
+    friend std::ostream &operator<<(std::ostream &out, const Matrix &mat);
 
 private:
-    size_t rowSize;
-    size_t colSize;
-    std::vector<int> data;
+    size_t rows_count_;
+    size_t columns_count_;
+    size_t channels_count_;
+    std::vector<int> data_;
 };
 
 #endif // MATRIX_H
