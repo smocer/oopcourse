@@ -1,4 +1,6 @@
 #include "matrix.h"
+#include "rgb_matrix.h"
+#include "bw_matrix.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -20,27 +22,10 @@ void GenMatrix(Matrix &mat, int min = 0, int max = 255)
 int main()
 {
     std::srand(std::time(nullptr));
-    Matrix a(2, 3, 3);
-    Matrix a1(2, 3, 3);
-    Matrix b(2, 3, 2, 3);
-    Matrix c1(3, 2, 1);
-    Matrix c2(2, 3, 1);
+    RGBMatrix a(2, 3);
     GenMatrix(a);
-    GenMatrix(a1);
-    GenMatrix(c1);
-    GenMatrix(c2);
 
     std::cout << a;
-    std::cout << "_____________" << std::endl;
-    std::cout << a1;
-    std::cout << "_____________" << std::endl;
-    std::cout << a + a1;
-    std::cout << "_____________" << std::endl;
-    std::cout << c1;
-    std::cout << "_____________" << std::endl;
-    std::cout << c2;
-    std::cout << "_____________" << std::endl;
-    std::cout << c1 * c2;
 
     return 0;
 }

@@ -22,14 +22,6 @@ Matrix::Matrix(const Matrix &matrix)
 {
 }
 
-Matrix::Matrix(int num_rows, int num_cols, int channels)
-    : rows_count_(num_rows),
-      columns_count_(num_cols),
-      channels_count_(channels),
-      data_(num_rows * num_cols * channels)
-{
-}
-
 Matrix::Matrix(size_t rows_count, size_t columns_count, size_t channels_count)
     : rows_count_(rows_count),
       columns_count_(columns_count),
@@ -182,28 +174,28 @@ Matrix &Matrix::operator=(const Matrix &mat)
     return *this;
 }
 
-std::ostream &operator<<(std::ostream &out, const Matrix &mat)
-{
-    if (mat.data_.empty())
-    {
-        out << "(An empty matrix)" << std::endl;
-        return out;
-    }
+// std::ostream &operator<<(std::ostream &out, const Matrix &mat)
+// {
+//     if (mat.data_.empty())
+//     {
+//         out << "(An empty matrix)" << std::endl;
+//         return out;
+//     }
 
-    for (size_t row = 0; row < mat.getRows(); ++row)
-    {
-        for (size_t col = 0; col < mat.getCols(); ++col)
-        {
-            out << (col > 0 ? " " : "") << std::setw(2);
-            out << "(";
-            for (size_t channel = 0; channel < mat.getChannels(); ++channel)
-            {
-                out << (channel > 0 ? ", " : "") << std::setw(3);
-                out << mat.at(row, col, channel);
-            }
-            out << ")";
-        }
-        out << std::endl;
-    }
-    return out;
-}
+//     for (size_t row = 0; row < mat.getRows(); ++row)
+//     {
+//         for (size_t col = 0; col < mat.getCols(); ++col)
+//         {
+//             out << (col > 0 ? " " : "") << std::setw(2);
+//             out << "(";
+//             for (size_t channel = 0; channel < mat.getChannels(); ++channel)
+//             {
+//                 out << (channel > 0 ? ", " : "") << std::setw(3);
+//                 out << mat.at(row, col, channel);
+//             }
+//             out << ")";
+//         }
+//         out << std::endl;
+//     }
+//     return out;
+// }

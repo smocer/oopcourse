@@ -14,8 +14,8 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64",
             "compilerArgs": [
-                "-Wuninitialized",          // Enable uninitialized warnings
-                "-Werror=uninitialized"     // Treat uninitialized as errors
+                "-Wuninitialized",
+                "-Werror=uninitialized"
             ]
         }
     ],

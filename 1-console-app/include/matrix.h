@@ -10,7 +10,6 @@ class Matrix
 public:
     Matrix();
     Matrix(const Matrix &mat);
-    Matrix(int num_rows, int num_cols, int channels);
     Matrix(size_t rows_count, size_t columns_count, size_t channels);
     Matrix(size_t rows_count, size_t columns_count, size_t channels, int init_value);
 
@@ -31,7 +30,7 @@ public:
         return data_[row * rows_count_ * channels_count_ + col * channels_count_ + channel];
     }
 
-    void print() const;
+    virtual void print() const;
 
     Matrix add(int val) const;
     Matrix subtract(int val) const;
@@ -51,7 +50,7 @@ public:
     Matrix &operator=(const Matrix &mat);
     friend std::ostream &operator<<(std::ostream &out, const Matrix &mat);
 
-private:
+protected:
     size_t rows_count_;
     size_t columns_count_;
     size_t channels_count_;
