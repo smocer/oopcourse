@@ -2,6 +2,7 @@
 #define RGB_MATRIX_H
 
 #include "matrix.h"
+#include "bw_matrix.h"
 
 class RGBMatrix : public Matrix
 {
@@ -15,6 +16,8 @@ public:
     void fromOpenCV(const cv::Mat &mat) override;
     cv::Mat toOpenCV() const override;
     bool readImage(const std::string &path) override;
+
+    BWMatrix toBW() const;
 
     RGBMatrix add(int val) const;
     RGBMatrix subtract(int val) const;

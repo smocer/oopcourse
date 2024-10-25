@@ -65,11 +65,19 @@ cv::Mat BWMatrix::toOpenCV() const
 bool BWMatrix::readImage(const std::string &path)
 {
     cv::Mat bwImage = cv::imread(path, cv::IMREAD_GRAYSCALE);
-    if (bwImage.empty()) {
+    if (bwImage.empty())
+    {
         return false;
     }
     fromOpenCV(bwImage);
     return true;
+}
+
+BWMatrix BWMatrix::invert() const
+{
+    BWMatrix inverted = *this - 255;
+    inverted = inverted * (-1);
+    return inverted;
 }
 
 BWMatrix &BWMatrix::operator=(const BWMatrix &mat)

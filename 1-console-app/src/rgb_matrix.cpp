@@ -71,11 +71,24 @@ cv::Mat RGBMatrix::toOpenCV() const
 bool RGBMatrix::readImage(const std::string &path)
 {
     cv::Mat rgbImage = cv::imread(path, cv::IMREAD_COLOR);
-    if (rgbImage.empty()) {
+    if (rgbImage.empty())
+    {
         return false;
     }
     fromOpenCV(rgbImage);
     return true;
+}
+
+BWMatrix RGBMatrix::toBW() const
+{
+    BWMatrix res(rows_count_, columns_count_);
+    for (size_t r = 0; r < rows_count_; ++r) {
+        for (size_t c = 0; c < columns_count_; ++c) {
+            int gray = (at(r, c, 0) + at(r, c, 1) + at(r, c, 2)) / 3;
+            res.at(r, c) = gray;
+        }
+    }
+    return res;
 }
 
 RGBMatrix &RGBMatrix::operator=(const RGBMatrix &mat)

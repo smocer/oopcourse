@@ -27,6 +27,8 @@ int main()
     bw.readImage("images/bw.jpg");
     rgb.readImage("images/rgb.jpg");
     bw.display();
+    bw.invert().display();
     rgb.display();
+    rgb.toBW().display();
     return 0;
 }

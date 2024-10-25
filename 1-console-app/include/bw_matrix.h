@@ -16,6 +16,8 @@ public:
     cv::Mat toOpenCV() const override;
     bool readImage(const std::string &path) override;
 
+    BWMatrix invert() const;
+
     BWMatrix add(int val) const;
     BWMatrix subtract(int val) const;
     BWMatrix multiply(int val) const;
