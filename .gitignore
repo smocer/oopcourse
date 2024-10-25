@@ -37,3 +37,4 @@
 # build / cmake artifacts
 **/build/
 **/bin/
+**/CMakeFiles/

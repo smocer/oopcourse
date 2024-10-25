@@ -21,31 +21,12 @@ void GenMatrix(Matrix &mat, int min = 0, int max = 255)
 
 int main()
 {
-    std::srand(std::time(nullptr));
-    RGBMatrix a(2, 3);
-    BWMatrix b(4, 1);
-    GenMatrix(a);
-    GenMatrix(b);
+    RGBMatrix rgb;
+    BWMatrix bw;
 
-    std::cout << a;
-
-    std::cout << "======================" << std::endl;
-
-    std::cout << a + 11;
-    std::cout << "======================" << std::endl;
-    std::cout << a - 11;
-    std::cout << "======================" << std::endl;
-    std::cout << a * 10;
-    std::cout << "======================" << std::endl;
-
-    std::cout << b;
-    std::cout << "======================" << std::endl;
-
-    std::cout << b + 11;
-    std::cout << "======================" << std::endl;
-    std::cout << b - 11;
-    std::cout << "======================" << std::endl;
-    std::cout << b * 10;
-
+    bw.readImage("images/bw.jpg");
+    rgb.readImage("images/rgb.jpg");
+    bw.display();
+    rgb.display();
     return 0;
 }

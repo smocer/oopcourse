@@ -27,6 +27,57 @@ void RGBMatrix::print() const
     std::cout << *this << std::endl; // this / *this?
 }
 
+void RGBMatrix::fromOpenCV(const cv::Mat &mat)
+{
+    if (mat.channels() != 3 || mat.depth() != CV_8U)
+    {
+        return;
+    }
+
+    rows_count_ = mat.rows;
+    columns_count_ = mat.cols;
+    data_.resize(mat.total() * mat.channels());
+
+    for (size_t r = 0; r < rows_count_; ++r)
+    {
+        for (size_t c = 0; c < columns_count_; ++c)
+        {
+            auto val = mat.at<cv::Vec3b>(r, c);
+            at(r, c, 0) = val[2];
+            at(r, c, 1) = val[1];
+            at(r, c, 2) = val[0];
+        }
+    }
+}
+
+cv::Mat RGBMatrix::toOpenCV() const
+{
+    cv::Mat mat(rows_count_, columns_count_, CV_8UC3);
+
+    for (size_t r = 0; r < rows_count_; ++r)
+    {
+        for (size_t c = 0; c < columns_count_; ++c)
+        {
+            cv::Vec3b val;
+            val[0] = at(r, c, 2);
+            val[1] = at(r, c, 1);
+            val[2] = at(r, c, 0);
+            mat.at<cv::Vec3b>(r, c) = val;
+        }
+    }
+    return mat;
+}
+
+bool RGBMatrix::readImage(const std::string &path)
+{
+    cv::Mat rgbImage = cv::imread(path, cv::IMREAD_COLOR);
+    if (rgbImage.empty()) {
+        return false;
+    }
+    fromOpenCV(rgbImage);
+    return true;
+}
+
 RGBMatrix &RGBMatrix::operator=(const RGBMatrix &mat)
 {
     Matrix::operator=(mat);
@@ -35,7 +86,7 @@ RGBMatrix &RGBMatrix::operator=(const RGBMatrix &mat)
 
 std::ostream &operator<<(std::ostream &out, const Matrix &mat)
 {
-    if (mat.data_.empty())
+    if (mat.getRows() == 0 || mat.getCols() == 0)
     {
         out << "(An empty matrix)" << std::endl;
         return out;

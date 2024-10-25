@@ -27,6 +27,51 @@ void BWMatrix::print() const
     std::cout << *this << std::endl; // this / *this?
 }
 
+void BWMatrix::fromOpenCV(const cv::Mat &mat)
+{
+    if (mat.channels() != 1 || mat.depth() != CV_8U)
+    {
+        return;
+    }
+
+    rows_count_ = mat.rows;
+    columns_count_ = mat.cols;
+    data_.resize(mat.total());
+
+    for (size_t r = 0; r < rows_count_; ++r)
+    {
+        for (size_t c = 0; c < columns_count_; ++c)
+        {
+            at(r, c) = mat.at<uchar>(r, c);
+        }
+    }
+}
+
+cv::Mat BWMatrix::toOpenCV() const
+{
+    cv::Mat mat(rows_count_, columns_count_, CV_8UC1);
+
+    for (size_t r = 0; r < rows_count_; ++r)
+    {
+        for (size_t c = 0; c < columns_count_; ++c)
+        {
+            mat.at<uchar>(r, c) = at(r, c);
+        }
+    }
+
+    return mat;
+}
+
+bool BWMatrix::readImage(const std::string &path)
+{
+    cv::Mat bwImage = cv::imread(path, cv::IMREAD_GRAYSCALE);
+    if (bwImage.empty()) {
+        return false;
+    }
+    fromOpenCV(bwImage);
+    return true;
+}
+
 BWMatrix &BWMatrix::operator=(const BWMatrix &mat)
 {
     Matrix::operator=(mat);

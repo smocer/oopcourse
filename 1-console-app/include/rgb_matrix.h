@@ -12,6 +12,9 @@ public:
     RGBMatrix(size_t rows, size_t cols, int init_val);
 
     void print() const override;
+    void fromOpenCV(const cv::Mat &mat) override;
+    cv::Mat toOpenCV() const override;
+    bool readImage(const std::string &path) override;
 
     RGBMatrix add(int val) const;
     RGBMatrix subtract(int val) const;

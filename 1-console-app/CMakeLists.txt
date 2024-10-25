@@ -6,9 +6,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # set(CMAKE_PREFIX_PATH ../../opencv-4.10.0/build) # why does it work without it.....
+set(OpenCV_DIR ../../opencv-4.10.0/build)
 
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
+    # ${OpenCV_INCLUDE_DIRS}
 )
 
 find_package(OpenCV REQUIRED)
@@ -21,9 +23,7 @@ add_library(${PROJECT_NAME} STATIC
     ${lib_src}
 )
 
-target_link_libraries(${PROJECT_NAME}
-    ${OpenCV_LIBS}
-)
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 
 file(GLOB src_files
     "*.cpp"

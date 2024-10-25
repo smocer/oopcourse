@@ -2,8 +2,11 @@
 #define MATRIX_H
 
 #include <vector>
-#include <functional>
 #include <iostream>
+
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
 
 class Matrix
 {
@@ -30,24 +33,13 @@ public:
         return data_[row * columns_count_ * channels_count_ + col * channels_count_ + channel];
     }
 
-    virtual void print() const;
+    virtual void print() const = 0;
+    virtual void fromOpenCV(const cv::Mat &mat) = 0;
+    virtual cv::Mat toOpenCV() const = 0;
+    virtual bool readImage(const std::string &path) = 0;
+    void display() const;
 
-    Matrix add(int val) const;
-    Matrix subtract(int val) const;
-    Matrix multiply(int val) const;
-
-    Matrix add(Matrix val) const;
-    Matrix subtract(Matrix val) const;
-    Matrix multiply(Matrix val) const;
-
-    Matrix operator+(int val) const;
-    Matrix operator+(Matrix val) const;
-    Matrix operator-(int val) const;
-    Matrix operator-(Matrix val) const;
-    Matrix operator*(int val) const;
-    Matrix operator*(Matrix val) const;
     Matrix &operator=(const Matrix &mat);
-    friend std::ostream &operator<<(std::ostream &out, const Matrix &mat);
 
 protected:
     void add(Matrix &res, int val) const;

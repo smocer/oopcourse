@@ -12,6 +12,9 @@ public:
     BWMatrix(size_t rows, size_t cols, int init_val);
 
     void print() const override;
+    void fromOpenCV(const cv::Mat &mat) override;
+    cv::Mat toOpenCV() const override;
+    bool readImage(const std::string &path) override;
 
     BWMatrix add(int val) const;
     BWMatrix subtract(int val) const;
