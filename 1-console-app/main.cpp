@@ -24,7 +24,7 @@ void GenMatrix(Matrix &mat, int min = 0, int max = 255)
     }
 }
 
-int main()
+void mushroomExample()
 {
     int bgColor = 255;
     int capColor = 179;
@@ -50,7 +50,10 @@ int main()
     bw.draw(stipe);
     bw.draw(background3);
     bw.display();
+}
 
+void houseExample()
+{
     RGBMatrix rgb(2000, 2000, 0);
     RGBColor rgbColor(102, 205, 255);
     Rectangle sky({0, 0}, 2000, 1500, rgbColor);
@@ -89,5 +92,77 @@ int main()
     rgb.draw(window1);
     rgb.draw(window2);
     rgb.display();
+}
+
+void myExample()
+{
+    RGBMatrix rgb(2000, 2000, 0);
+
+    RGBColor rgbColor(0, 0, 50);
+    Rectangle sky({0, 0}, 2000, 1500, rgbColor);
+    rgb.draw(sky);
+
+    rgbColor.changeColor(255, 255, 150);
+    Circle moon({1800, 200}, 100, rgbColor);
+    rgb.draw(moon);
+
+    rgbColor.changeColor(255, 255, 255);
+    for (int i = 0; i < 100; ++i)
+    {
+        int x = std::rand() % 2000;
+        int y = std::rand() % 1500;
+        Circle star({x, y}, 3, rgbColor);
+        rgb.draw(star);
+    }
+
+    rgbColor.changeColor(5, 50, 15);
+    Rectangle grass({0, 1500}, 2000, 500, rgbColor);
+    rgb.draw(grass);
+
+    for (int i = 50; i < 2000; i += 200)
+    {
+        rgbColor.changeColor(0, 100, 0);
+        Circle foliage({i, 1300}, 80, rgbColor);
+        rgbColor.changeColor(140, 70, 20);
+        Rectangle trunk({i - 10, 1370}, 20, 130, rgbColor);
+        rgb.draw(foliage);
+        rgb.draw(trunk);
+    }
+
+    rgbColor.changeColor(25, 25, 110);
+    Circle lake({1000, 3600}, 2000, rgbColor);
+    rgb.draw(lake);
+
+    rgbColor.changeColor(255, 255, 255);
+    for (int i = 0; i < 100; ++i)
+    {
+        int x = std::rand() % 2000;
+        int y = 1500 + std::rand() % 500;
+        if ((x - 1000) * (x - 1000) + (y - 3600) * (y - 3600) < 2000 * 2000)
+        {
+            Circle star({x, y}, 3, rgbColor);
+            rgb.draw(star);
+        }
+    }
+
+    for (int i = 450; i < 1800; i += 200)
+    {
+        int topLakeY = abs(sqrt(2000 * 2000 - (i - 1000) * (i - 1000)) - 3600);
+        rgbColor.changeColor(70, 20, 15);
+        Rectangle trunk({i - 10, std::max(1590, topLakeY)}, 20, 130 - topLakeY + 1590, rgbColor);
+        rgbColor.changeColor(0, 40, 20);
+        Circle foliage({i, 1800}, 80, rgbColor);
+        rgb.draw(foliage);
+        rgb.draw(trunk);
+    }
+
+    rgb.display();
+}
+
+int main()
+{
+    mushroomExample();
+    houseExample();
+    myExample();
     return 0;
 }
