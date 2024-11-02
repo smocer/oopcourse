@@ -80,14 +80,14 @@ bool RGBMatrix::readImage(const std::string &path)
     return true;
 }
 
-void RGBMatrix::draw(Shape *shape)
+void RGBMatrix::draw(const Shape &shape)
 {
-    auto color = shape->getColor().getRGB();
+    auto color = shape.getColor().getRGB();
     for (int y = 0; y < rows_count_; ++y)
     {
         for (int x = 0; x < columns_count_; ++x)
         {
-            if (shape->isPointInside({x, y}))
+            if (shape.isPointInside({x, y}))
             {
                 at(y, x, 0) = std::get<0>(color);
                 at(y, x, 1) = std::get<1>(color);

@@ -18,12 +18,12 @@ Rectangle::Rectangle(const Rectangle &other)
 }
 
 // MARK: - Inherited from Shape
-Color Rectangle::getColor()
+Color Rectangle::getColor() const
 {
     return color_;
 }
 
-bool Rectangle::isPointInside(Point point)
+bool Rectangle::isPointInside(Point point) const
 {
     return point.x >= origin_.x &&
            point.y >= origin_.y &&

@@ -15,8 +15,8 @@ public:
     Triangle(const Triangle &other);
 
     // MARK: - Inherited from Shape
-    Color getColor() override;
-    bool isPointInside(Point point) override;
+    Color getColor() const override;
+    bool isPointInside(Point point) const override;
 
 private:
     Point vertex1_;

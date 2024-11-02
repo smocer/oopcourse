@@ -39,7 +39,7 @@ public:
     virtual void fromOpenCV(const cv::Mat &mat) = 0;
     virtual cv::Mat toOpenCV() const = 0;
     virtual bool readImage(const std::string &path) = 0;
-    virtual void draw(Shape *shape) = 0;
+    virtual void draw(const Shape &shape) = 0;
     void display() const;
 
     Matrix &operator=(const Matrix &mat);

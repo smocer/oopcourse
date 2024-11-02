@@ -9,8 +9,8 @@ class Shape
 public:
     virtual ~Shape() = default;
 
-    virtual Color getColor() = 0;
-    virtual bool isPointInside(Point point) = 0;
+    virtual Color getColor() const = 0;
+    virtual bool isPointInside(Point point) const = 0;
 };
 
 #endif // SHAPE_H

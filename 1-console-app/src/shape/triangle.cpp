@@ -19,7 +19,7 @@ Triangle::Triangle(const Triangle &other)
 }
 
 // MARK: - Inherited from Shape
-Color Triangle::getColor()
+Color Triangle::getColor() const
 {
     return color_;
 }
@@ -29,7 +29,7 @@ double area(double x1, double y1, double x2, double y2, double x3, double y3)
     return 0.5 * std::abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
 }
 
-bool Triangle::isPointInside(Point point)
+bool Triangle::isPointInside(Point point) const
 {
     double x = (double)point.x;
     double y = (double)point.y;

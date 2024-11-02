@@ -16,12 +16,12 @@ Circle::Circle(const Circle &other)
 }
 
 // MARK: - Inherited from Shape
-Color Circle::getColor()
+Color Circle::getColor() const
 {
     return color_;
 }
 
-bool Circle::isPointInside(Point point)
+bool Circle::isPointInside(Point point) const
 {
     double x_x0 = (double)point.x - (double)origin_.x;
     double y_y0 = (double)point.y - (double)origin_.y;
