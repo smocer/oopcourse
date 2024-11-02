@@ -40,6 +40,10 @@ bool Triangle::isPointInside(Point point)
     double x3 = (double)vertex3_.x;
     double y3 = (double)vertex3_.y;
     double area_all = area(x1, y1, x2, y2, x3, y3);
+    if (area_all == 0)
+    {
+        return false;
+    }
     double area_1 = area(x, y, x2, y2, x3, y3);
     double area_2 = area(x1, y1, x, y, x3, y3);
     double area_3 = area(x1, y1, x2, y2, x, y);
