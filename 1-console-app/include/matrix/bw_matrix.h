@@ -2,6 +2,9 @@
 #define BW_MATRIX_H
 
 #include "matrix.h"
+#include "shape/circle.h"
+#include "shape/rectangle.h"
+#include "shape/triangle.h"
 
 class BWMatrix : public Matrix
 {
@@ -15,6 +18,7 @@ public:
     void fromOpenCV(const cv::Mat &mat) override;
     cv::Mat toOpenCV() const override;
     bool readImage(const std::string &path) override;
+    void draw(Shape *shape) override;
 
     BWMatrix invert() const;
 
@@ -28,6 +32,22 @@ public:
 
     BWMatrix &operator=(const BWMatrix &mat);
     friend std::ostream &operator<<(std::ostream &out, const Matrix &mat);
+
+    // For convenience
+    void draw(Circle circle)
+    {
+        draw(&circle);
+    }
+
+    void draw(Rectangle rect)
+    {
+        draw(&rect);
+    }
+
+    void draw(Triangle tri)
+    {
+        draw(&tri);
+    }
 };
 
 #endif // BW_MATRIX_H

@@ -29,6 +29,20 @@ public:
         return (r_ + g_ + b_) / 3;
     };
 
+    void changeColor(int r, int g, int b)
+    {
+        r_ = r;
+        g_ = g;
+        b_ = b;
+    }
+
+    void changeColor(int gray)
+    {
+        r_ = gray;
+        g_ = gray;
+        b_ = gray;
+    }
+
 private:
     int r_, g_, b_;
 };

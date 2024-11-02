@@ -3,6 +3,9 @@
 
 #include "matrix.h"
 #include "bw_matrix.h"
+#include "shape/circle.h"
+#include "shape/rectangle.h"
+#include "shape/triangle.h"
 
 class RGBMatrix : public Matrix
 {
@@ -16,6 +19,7 @@ public:
     void fromOpenCV(const cv::Mat &mat) override;
     cv::Mat toOpenCV() const override;
     bool readImage(const std::string &path) override;
+    void draw(Shape *shape) override;
 
     BWMatrix toBW() const;
 
@@ -29,6 +33,22 @@ public:
     
     RGBMatrix &operator=(const RGBMatrix &mat);
     friend std::ostream &operator<<(std::ostream &out, const Matrix &mat);
+
+    // For convenience
+    void draw(Circle circle)
+    {
+        draw(&circle);
+    }
+
+    void draw(Rectangle rect)
+    {
+        draw(&rect);
+    }
+
+    void draw(Triangle tri)
+    {
+        draw(&tri);
+    }
 };
 
 #endif // RGB_MATRIX_H

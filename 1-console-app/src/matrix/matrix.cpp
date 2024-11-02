@@ -34,7 +34,7 @@ Matrix::Matrix(size_t rows_count, size_t columns_count, size_t channels_count, i
     : rows_count_(rows_count),
       columns_count_(columns_count),
       channels_count_(channels_count),
-      data_(rows_count * columns_count, init_value)
+      data_(rows_count * columns_count * channels_count, init_value)
 {
 }
 

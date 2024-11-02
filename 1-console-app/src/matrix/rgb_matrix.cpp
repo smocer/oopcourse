@@ -2,6 +2,7 @@
 
 #include <iomanip>
 #include <iostream>
+#include <tuple>
 
 RGBMatrix::RGBMatrix()
     : Matrix(0, 0, 3)
@@ -79,11 +80,30 @@ bool RGBMatrix::readImage(const std::string &path)
     return true;
 }
 
+void RGBMatrix::draw(Shape *shape)
+{
+    auto color = shape->getColor().getRGB();
+    for (int y = 0; y < rows_count_; ++y)
+    {
+        for (int x = 0; x < columns_count_; ++x)
+        {
+            if (shape->isPointInside({x, y}))
+            {
+                at(y, x, 0) = std::get<0>(color);
+                at(y, x, 1) = std::get<1>(color);
+                at(y, x, 2) = std::get<2>(color);
+            }
+        }
+    }
+}
+
 BWMatrix RGBMatrix::toBW() const
 {
     BWMatrix res(rows_count_, columns_count_);
-    for (size_t r = 0; r < rows_count_; ++r) {
-        for (size_t c = 0; c < columns_count_; ++c) {
+    for (size_t r = 0; r < rows_count_; ++r)
+    {
+        for (size_t c = 0; c < columns_count_; ++c)
+        {
             int gray = (at(r, c, 0) + at(r, c, 1) + at(r, c, 2)) / 3;
             res.at(r, c) = gray;
         }
