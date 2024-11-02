@@ -1,32 +1,14 @@
 {
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "build_all",
-            "command": "/usr/bin/clang++",
+            "type": "shell",
+            "label": "cmake_build_all",
+            "command": "cmake",
             "args": [
-                "-fcolor-diagnostics",
-                "-fansi-escape-codes",
-                "-g",
-                "${workspaceFolder}/*.cpp",
-                "-g",
-                "${workspaceFolder}/src/*.cpp",
-                "-o",
-                "${workspaceFolder}/bin/OOPCourse",
-                "-I",
-                "${workspaceFolder}/include",
-                "-I",
-                "/usr/local/include/opencv4",
-                "-I",
-                "/usr/local/include/opencv4/opencv2",
-                "-std=c++14",
-                "-Wuninitialized",
-                "-Werror=uninitialized",
-                "-Wall",
-                "-Wextra"
+                "--build", "${workspaceFolder}/build"
             ],
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${workspaceFolder}/build"
             },
             "problemMatcher": [
                 "$gcc"
@@ -35,7 +17,20 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "My cool task."
+            "detail": "Build ALL project using CMake."
+        },
+        {
+            "label": "CMake Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S", "${workspaceFolder}",       // Source directory
+                "-B", "${workspaceFolder}/build"  // Build directory
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"  // Set the working directory to the project root
+            },
+            "problemMatcher": []
         }
     ],
     "version": "2.0.0"

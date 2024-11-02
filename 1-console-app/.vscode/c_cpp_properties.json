@@ -8,7 +8,9 @@
                 "/usr/local/include/opencv4",
                 "/usr/local/include/opencv4/opencv2"
             ],
-            "defines": [],
+            "defines": [
+                "PROJECT_SOURCE_DIR=\"${workspaceFolder}\""  // Define the macro for IntelliSense
+            ],
             "macFrameworkPath": [
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],

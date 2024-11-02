@@ -1,9 +1,10 @@
-#include "matrix.h"
-#include "rgb_matrix.h"
-#include "bw_matrix.h"
+#include "matrix/matrix.h"
+#include "matrix/rgb_matrix.h"
+#include "matrix/bw_matrix.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <unistd.h>
 
 void GenMatrix(Matrix &mat, int min = 0, int max = 255)
 {
@@ -24,8 +25,8 @@ int main()
     RGBMatrix rgb;
     BWMatrix bw;
 
-    bw.readImage("images/bw.jpg");
-    rgb.readImage("images/rgb.jpg");
+    bw.readImage(std::string(PROJECT_SOURCE_DIR) + "/images/bw.jpg");
+    rgb.readImage(std::string(PROJECT_SOURCE_DIR) + "/images/rgb.jpg");
     bw.display();
     bw.invert().display();
     rgb.display();

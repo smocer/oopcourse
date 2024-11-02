@@ -1,4 +1,4 @@
-#include "rgb_matrix.h"
+#include "matrix/rgb_matrix.h"
 
 #include <iomanip>
 #include <iostream>

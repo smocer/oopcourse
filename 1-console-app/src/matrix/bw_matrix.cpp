@@ -1,4 +1,4 @@
-#include "bw_matrix.h"
+#include "matrix/bw_matrix.h"
 
 #include <iomanip>
 #include <iostream>

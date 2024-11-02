@@ -5,14 +5,14 @@
       "name": "(lldb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/bin/OOPCourse",   // Path to your executable
+      "program": "${workspaceFolder}/build/bin/runner",   // Path to your executable
       "args": [],                                      // Arguments to pass to the program
       "stopAtEntry": false,                            // Whether to stop at the entry point
       "cwd": "${workspaceFolder}",                     // Working directory
       "environment": [],                               // Environment variables
       "externalConsole": false,                         // Use an external terminal for input/output
       "MIMode": "lldb",                                // Use LLDB for debugging
-      "preLaunchTask": "build_all",                    // Task to build your program
+      "preLaunchTask": "cmake_build_all",                    // Task to build your program
       "logging": { "engineLogging": false },            // Enable logging for debugging issues
       "targetArchitecture": "x64",                     // Target architecture
       "setupCommands": [
