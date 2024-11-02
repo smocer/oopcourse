@@ -1,4 +1,5 @@
-#include <color/color.h>;
+#include "color/rgb_color.h"
+#include <algorithm>
 
 // MARK: - Constructors
 RGBColor::RGBColor()
@@ -16,16 +17,16 @@ RGBColor::RGBColor(const RGBColor &other)
 }
 
 RGBColor::RGBColor(int value)
-    : r_(value),
-      g_(value),
-      b_(value)
+    : r_(std::clamp(value, 0, 255)),
+      g_(std::clamp(value, 0, 255)),
+      b_(std::clamp(value, 0, 255))
 {
 }
 
 RGBColor::RGBColor(int r, int g, int b)
-    : r_(r),
-      g_(g),
-      b_(b)
+    : r_(std::clamp(r, 0, 255)),
+      g_(std::clamp(g, 0, 255)),
+      b_(std::clamp(b, 0, 255))
 {
 }
 
@@ -44,7 +45,7 @@ BWColor RGBColor::getBW() const
 // MARK: - Other methods
 void RGBColor::changeColor(int r, int g, int b)
 {
-    r_ = r;
-    g_ = g;
-    b_ = b;
+    r_ = std::clamp(r, 0, 255);
+    g_ = std::clamp(r, 0, 255);
+    b_ = std::clamp(r, 0, 255);
 }

@@ -1,18 +1,17 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-#include <shape/shape.h>
-#include <color/color.h>
-#include <point/point.h>
+#include "shape/shape.h"
+#include "color/color.h"
+#include "point/point.h"
 
-class Circle: public Shape
+class Circle : public Shape
 {
 public:
-    ~Circle();
+    ~Circle() = default;
 
     // MARK: - Constructors
-    Circle();
-    Circle(Point origin, int radius);
+    Circle(Point origin, int radius, Color color);
     Circle(const Circle &other);
 
     // MARK: - Inherited from Shape
@@ -22,6 +21,7 @@ public:
 private:
     Point origin_;
     int radius_;
+    Color color_;
 };
 
 #endif // CIRCLE_H

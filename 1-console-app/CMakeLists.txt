@@ -1,17 +1,15 @@
 cmake_minimum_required(VERSION 3.5.0)
 project(OOPcourse VERSION 0.1.0 LANGUAGES C CXX)
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 add_definitions(-DPROJECT_SOURCE_DIR="${PROJECT_SOURCE_DIR}")
-# set(CMAKE_PREFIX_PATH ../../opencv-4.10.0/build) # why does it work without it.....
 set(OpenCV_DIR ../../opencv-4.10.0/build)
 
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
-    # ${OpenCV_INCLUDE_DIRS}
 )
 
 find_package(OpenCV REQUIRED)

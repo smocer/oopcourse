@@ -1,4 +1,5 @@
-#include <color/color.h>;
+#include "color/bw_color.h"
+#include <algorithm>
 
 // MARK: - Constructors
 BWColor::BWColor()
@@ -12,7 +13,7 @@ BWColor::BWColor(const BWColor &other)
 }
 
 BWColor::BWColor(int value)
-    : value_(value)
+    : value_(std::clamp(value, 0, 255))
 {
 }
 
@@ -30,5 +31,5 @@ BWColor BWColor::getBW() const
 // MARK: - Other methods
 void BWColor::changeColor(int value)
 {
-    value_ = value;
+    value_ = std::clamp(value, 0, 255);
 }

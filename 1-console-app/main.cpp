@@ -5,6 +5,11 @@
 #include <cstdlib>
 #include <ctime>
 #include <unistd.h>
+#include "color/color.h"
+#include "color/bw_color.h"
+#include "shape/triangle.h"
+#include "shape/rectangle.h"
+#include "shape/circle.h"
 
 void GenMatrix(Matrix &mat, int min = 0, int max = 255)
 {
@@ -31,5 +36,12 @@ int main()
     bw.invert().display();
     rgb.display();
     rgb.toBW().display();
+
+    BWColor bwCol(100);
+    Rectangle rect({20, 20}, 100, 30, BWColor(100));
+    // std::cout << rect.isPointInside({500, 500}) << std::endl;
+
+    // Triangle<RGBColor> tri({40, 40}, {50, 50}, {60, 60}, RGBColor(255));
+    // std::cout << tri.isPointInside({500, 500}) << std::endl;
     return 0;
 }
