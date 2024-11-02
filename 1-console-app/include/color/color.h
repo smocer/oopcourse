@@ -12,7 +12,7 @@ public:
 class RGBColor : public Color
 {
 public:
-    ~RGBColor();
+    ~RGBColor() = default;
 
     // MARK: - Constructors
     RGBColor();
@@ -34,7 +34,7 @@ private:
 class BWColor : public Color
 {
 public:
-    ~BWColor();
+    ~BWColor() = default;
 
     // MARK: - Constructors
     BWColor();
