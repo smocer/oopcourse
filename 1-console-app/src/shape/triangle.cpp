@@ -1,5 +1,7 @@
 #include "shape/triangle.h"
 #include <cmath>
+#include <vector>
+#include <algorithm>
 
 // MARK: - Constructors
 Triangle::Triangle(Point vertex1, Point vertex2, Point vertex3, Color color)
@@ -49,4 +51,24 @@ bool Triangle::isPointInside(Point point) const
     double area_3 = area(x1, y1, x2, y2, x, y);
     double tolerance = 1e-9;
     return std::abs(area_all - (area_1 + area_2 + area_3)) < tolerance;
+}
+
+std::vector<Point> &Triangle::getPoints() const
+{
+    std::vector<Point> *result = new std::vector<Point>;
+    int xMin = std::min(vertex1_.x, std::min(vertex2_.x, vertex3_.x));
+    int yMin = std::min(vertex1_.y, std::min(vertex2_.y, vertex3_.y));
+    int xMax = std::max(vertex1_.x, std::max(vertex2_.x, vertex3_.x));
+    int yMax = std::max(vertex1_.y, std::max(vertex2_.y, vertex3_.y));
+    for (int x = xMin; x < xMax; ++x)
+    {
+        for (int y = yMin; y < yMax; ++y)
+        {
+            if (isPointInside({x, y}))
+            {
+                result->push_back({x, y});
+            }
+        }
+    }
+    return *result;
 }

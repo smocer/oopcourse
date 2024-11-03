@@ -11,6 +11,7 @@ public:
 
     virtual Color getColor() const = 0;
     virtual bool isPointInside(Point point) const = 0;
+    virtual std::vector<Point> &getPoints() const = 0;
 };
 
 #endif // SHAPE_H

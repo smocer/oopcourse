@@ -83,17 +83,18 @@ bool RGBMatrix::readImage(const std::string &path)
 void RGBMatrix::draw(const Shape &shape)
 {
     auto color = shape.getColor().getRGB();
-    for (int y = 0; y < rows_count_; ++y)
+    auto points = shape.getPoints();
+    for (size_t i = 0; i < points.size(); ++i)
     {
-        for (int x = 0; x < columns_count_; ++x)
+        int x = points[i].x;
+        int y = points[i].y;
+        if (x < 0 || y < 0 || x > columns_count_ || y > rows_count_)
         {
-            if (shape.isPointInside({x, y}))
-            {
-                at(y, x, 0) = std::get<0>(color);
-                at(y, x, 1) = std::get<1>(color);
-                at(y, x, 2) = std::get<2>(color);
-            }
+            continue;
         }
+        at(y, x, 0) = std::get<0>(color);
+        at(y, x, 1) = std::get<1>(color);
+        at(y, x, 2) = std::get<2>(color);
     }
 }
 

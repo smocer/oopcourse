@@ -17,6 +17,7 @@ public:
     // MARK: - Inherited from Shape
     Color getColor() const override;
     bool isPointInside(Point point) const override;
+    std::vector<Point> &getPoints() const override;
 
 private:
     Point vertex1_;

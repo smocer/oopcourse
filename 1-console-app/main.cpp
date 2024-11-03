@@ -11,6 +11,8 @@
 #include "shape/circle.h"
 #include <chrono>
 
+static bool needToDisplay = false;
+
 void GenMatrix(Matrix &mat, int min = 0, int max = 255)
 {
     for (size_t r = 0; r < mat.getRows(); ++r)
@@ -50,7 +52,10 @@ void mushroomExample()
     bw.draw(background2);
     bw.draw(stipe);
     bw.draw(background3);
-    // bw.display();
+    if (needToDisplay)
+    {
+        bw.display();
+    }
 }
 
 void houseExample()
@@ -92,7 +97,10 @@ void houseExample()
     rgb.draw(knob);
     rgb.draw(window1);
     rgb.draw(window2);
-    // rgb.display();
+    if (needToDisplay)
+    {
+        rgb.display();
+    }
 }
 
 void myExample()
@@ -157,35 +165,29 @@ void myExample()
         rgb.draw(trunk);
     }
 
-    // rgb.display();
+    if (needToDisplay)
+    {
+        rgb.display();
+    }
 }
 
-using Time = std::chrono::high_resolution_clock;
-using ns = std::chrono::nanoseconds;
-using ms = std::chrono::milliseconds;
-
-double measureExecutionTimeMs(std::function<void()> lambda)
+double measureExecutionTime(std::function<void()> lambda)
 {
+    using Time = std::chrono::high_resolution_clock;
+    using ns = std::chrono::nanoseconds;
+
     Time::time_point start = Time::now();
     lambda();
     Time::time_point end = Time::now();
-    double duration = std::chrono::duration_cast<ms>(end - start).count();
-    return duration;
-}
-
-double measureExecutionTimeLikeOnTheSlide(std::function<void()> lambda)
-{
-    Time::time_point start = Time::now();
-    lambda();
-    Time::time_point end = Time::now();
-    double duration = std::chrono::duration_cast<ns>(end - start).count() * 10e-6;
+    double duration = std::chrono::duration_cast<ns>(end - start).count() * 1e-6;
     return duration;
 }
 
 int main()
 {
-    std::cout << "Mushroom time: " << measureExecutionTimeLikeOnTheSlide(mushroomExample) << "ms" << std::endl;
-    std::cout << "House time: " << measureExecutionTimeLikeOnTheSlide(houseExample) << "ms" << std::endl;
-    std::cout << "My time: " << measureExecutionTimeLikeOnTheSlide(myExample) << "ms" << std::endl;
+    needToDisplay = false; // Set this to true if you want to see the images
+    std::cout << "Mushroom time: " << measureExecutionTime(mushroomExample) << "ms" << std::endl;
+    std::cout << "House time: " << measureExecutionTime(houseExample) << "ms" << std::endl;
+    std::cout << "My time: " << measureExecutionTime(myExample) << "ms" << std::endl;
     return 0;
 }
