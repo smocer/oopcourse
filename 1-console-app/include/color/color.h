@@ -31,29 +31,23 @@ public:
 
     void changeColor(int r, int g, int b)
     {
-        r_ = r;
-        g_ = g;
-        b_ = b;
+        r_ = std::clamp(r, 0, 255);
+        g_ = std::clamp(g, 0, 255);
+        b_ = std::clamp(b, 0, 255);
     }
 
     void changeColor(int gray)
     {
-        r_ = gray;
-        g_ = gray;
-        b_ = gray;
+        r_ = std::clamp(gray, 0, 255);
+        g_ = std::clamp(gray, 0, 255);
+        b_ = std::clamp(gray, 0, 255);
     }
 
 private:
     int r_, g_, b_;
 };
 
-class RGBColor : public Color
-{
-    using Color::Color;
-};
-class BWColor : public Color
-{
-    using Color::Color;
-};
+typedef Color RGBColor;
+typedef Color BWColor;
 
 #endif // COLOR_H
