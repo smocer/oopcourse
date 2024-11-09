@@ -11,20 +11,19 @@
 #include "shape/circle.h"
 #include <chrono>
 
-static bool needToDisplay = false;
+static bool needToDisplay = false; // Set this to true if you want to see the images
 
-void GenMatrix(Matrix &mat, int min = 0, int max = 255)
+void mushroomExample();
+void houseExample();
+void myExample();
+double measureExecutionTime(std::function<void()> lambda);
+
+int main()
 {
-    for (size_t r = 0; r < mat.getRows(); ++r)
-    {
-        for (size_t c = 0; c < mat.getCols(); ++c)
-        {
-            for (size_t ch = 0; ch < mat.getChannels(); ++ch)
-            {
-                mat.at(r, c, ch) = min + std::rand() % (max - min + 1);
-            }
-        }
-    }
+    std::cout << "Mushroom time: " << measureExecutionTime(mushroomExample) << "ms" << std::endl;
+    std::cout << "House time: " << measureExecutionTime(houseExample) << "ms" << std::endl;
+    std::cout << "My time: " << measureExecutionTime(myExample) << "ms" << std::endl;
+    return 0;
 }
 
 void mushroomExample()
@@ -181,13 +180,4 @@ double measureExecutionTime(std::function<void()> lambda)
     Time::time_point end = Time::now();
     double duration = std::chrono::duration_cast<ns>(end - start).count() * 1e-6;
     return duration;
-}
-
-int main()
-{
-    needToDisplay = false; // Set this to true if you want to see the images
-    std::cout << "Mushroom time: " << measureExecutionTime(mushroomExample) << "ms" << std::endl;
-    std::cout << "House time: " << measureExecutionTime(houseExample) << "ms" << std::endl;
-    std::cout << "My time: " << measureExecutionTime(myExample) << "ms" << std::endl;
-    return 0;
 }
